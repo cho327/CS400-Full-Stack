@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/ps3', ps3Router);
-app.use('/GetRoute',Getrouter);
+app.use('/GetRoute',Getrouter); //http://localhost:3000/GetRoute
 app.use('/putroute',putrouter);
 
 // catch 404 and forward to error handler
