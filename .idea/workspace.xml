@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1413b6d2-d1a6-4ace-ab7e-2e9410a2b389" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/ps4.js" afterDir="false" />
-    </list>
+    <list default="true" id="1413b6d2-d1a6-4ace-ab7e-2e9410a2b389" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -217,12 +213,12 @@
       <workItem from="1572312837789" duration="209000" />
       <workItem from="1572313182436" duration="65000" />
       <workItem from="1572313248260" duration="137000" />
-      <workItem from="1572313396172" duration="2326000" />
+      <workItem from="1572313396172" duration="2982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23669000" />
+    <option name="totallyTimeSpent" value="24325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
