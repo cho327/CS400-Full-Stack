@@ -13,13 +13,20 @@ const build_url = (id, key, zip) => {
 }
 
 const responseUrl = build_url(apiID,apikey,BostonZIP);
+console.log('This is the URL we are using Get to : ' + responseUrl);
 
 /* GET users listing. */
 router.get('/get-weather', function(req, res, next) {
     fetch(responseUrl)
-        .
+        .then(res => res.json())
+        .then(data => {
+            res.send({ data });
+        })
+        .catch(err => {
+            res.redirect('/error');
     res.send('respond with a resource');
 });
+
 
 
 
