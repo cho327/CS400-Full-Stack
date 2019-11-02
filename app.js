@@ -10,7 +10,6 @@ const usersRouter = require('./routes/users');
 const ps4router =  require('./routes/ps4');
 
 const app = express();
-const port = 3000;
 
 // view engine setup
 app.engine('dust', adaro.dust());
@@ -42,9 +41,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-app.listen(port,function()){
-  console.log('now listening on Port:' + port);
-}
 
 module.exports = app;

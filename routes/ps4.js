@@ -24,7 +24,8 @@ router.get('/get-weather', function(req, res, next) {
         })
         .catch(err => {
             res.redirect('/error');
-    res.send('respond with a resource');
+            res.send('respond with a resource');
+        })
 });
 
 
