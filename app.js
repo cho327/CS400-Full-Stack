@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('ps4',ps4router);
+app.use('/ps4',ps4router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
