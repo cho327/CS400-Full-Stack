@@ -1,22 +1,13 @@
 const express = require('express');
 const router = express.Router();
-
-const apiID = 'f8e83847';
-const apikey = 'abf793dea5efeee55e23c588ffe173a4';
-const BostonZIP = 'us.02215';
-const appurl = 'http://api.weatherunlocked.com/api/current/';
-
-
-const build_url = (id, key, zip) => {
-    let final_url = appurl+zip+'?app_id='+id+'&app_key=' + key;
-    return final_url;
-}
-
-const responseUrl = build_url(apiID,apikey,BostonZIP);
-console.log('This is the URL we are using Get to : ' + responseUrl);
+const db = require('../mongo/mongo');
+// const MongoClient = require('mongodb').MongoClient;
+db.connect();
 
 /* GET users listing. */
 router.get('/get-weather', function(req, res, next) {
+
+    const DBobj = db.getDB();
     const request = require("request");
 
     const options = { method: 'GET',
@@ -36,9 +27,27 @@ router.get('/get-weather', function(req, res, next) {
 
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
+            //use datab
+
+            DBobj.collection('weather').find().toArray(function (err, result) {
+                if (err) throw err;
+                console.log(result)
+            })
+            // if the find returns something, then skip this...
+
+            DBobj.collection('weather').insertOne(body,function (err,res){
+                if(err) throw error;
+                console.log('inserted weather');
+            })
+        });
+
+        /*db.collection('weather').insertOne(body,function (err,res)){
+            if(err) throw error;
+            console.log('inserted weather');
+        }*/
 
         res.send(body);
-    });
-});
+    })
+
 
 module.exports = router;
